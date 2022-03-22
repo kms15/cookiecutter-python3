@@ -1,0 +1,10 @@
+name: make-check
+on: [push]
+jobs:
+  make-check-job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: pip3 install cookiecutter
+      - run: cookiecutter . --no-input
+      - run: "cd python_module && make check"
