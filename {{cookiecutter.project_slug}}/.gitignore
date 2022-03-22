@@ -1,0 +1,5 @@
+*~
+*.swp
+venv-{{cookiecutter.project_slug}}
+.coverage
+*__pycache__*

@@ -1,0 +1,8 @@
+{
+  "full_name": "Kendrick Shaw",
+  "email": "kms15@case.edu",
+  "project_name": "Python Module",
+  "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
+  "project_short_description": "WIP.",
+  "version": "0.0.0"
+}
