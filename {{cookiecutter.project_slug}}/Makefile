@@ -5,6 +5,7 @@ check: venv-{{cookiecutter.project_slug}}/bin/activate
 	source venv-{{cookiecutter.project_slug}}/bin/activate && \
 		python3 -m pytest \
 		--cov={{cookiecutter.project_slug}} \
+		--cov-report term-missing \
 		--doctest-modules
 
 .PHONY: clean
@@ -26,7 +27,7 @@ testwatch:
 	ls {{cookiecutter.project_slug}}/*.py \
 		test/*.py \
 		Makefile requirements.txt \
-		| entr time make check
+		| entr time $(MAKE) check
 
 venv-{{cookiecutter.project_slug}}/bin/activate: requirements.txt
 	rm -rf venv-{{cookiecutter.project_slug}}
